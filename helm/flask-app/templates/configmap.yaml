@@ -1,0 +1,11 @@
+
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: {{ .Release.Name }}-flask-config
+
+data:
+  MYSQL_HOST: {{ .Values.mysql.host | quote }}
+  MYSQL_PORT: "3306"
+  MYSQL_DB: "appdb"

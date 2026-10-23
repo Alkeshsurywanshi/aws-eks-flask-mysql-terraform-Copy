@@ -1,0 +1,20 @@
+
+apiVersion: networking.istio.io/v1
+kind: VirtualService
+
+metadata:
+  name: flask-virtualservice
+
+spec:
+  hosts:
+    - "*"
+
+  gateways:
+    - flask-gateway
+
+  http:
+    - route:
+        - destination:
+            host: flask-app-flask-app
+            port:
+              number: 5000
